@@ -53,7 +53,7 @@ En esta sección, iteramos sobre cada elemento en la lista data. Utilizando la c
 
 Se utilizó web scraping para extraer datos de páginas de compras en línea de tecnología. Las etiquetas más comunes en esas páginas fueron seleccionadas para la extracción de datos. Cada integrante del equipo creó una base de datos en CouchDB con el nombre de la tienda de tecnología correspondiente y cargó los documentos obtenidos a través del web scraping en sus respectivas bases de datos.
 
-<img src="img/ebay.jpg" width="1000px" alt="Texto alternativo">
+<img src="img/ebay.jpg" width="800px" alt="Texto alternativo">
 
 Posteriormente, se aplicó la técnica de réplicas de bases de datos en CouchDB para consolidar los datos extraídos de las bases de datos individuales de los integrantes en una base de datos principal llamada "PRODUCTOS". Se configuraron las réplicas desde cada base de datos de los integrantes hacia la base de datos principal, de manera que la base de datos "PRODUCTOS" recibió 2.000 documentos de cada integrante, cumpliendo con el requisito de alcanzar un total de 10.000 documentos.
 
