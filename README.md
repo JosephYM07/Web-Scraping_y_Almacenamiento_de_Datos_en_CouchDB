@@ -1,6 +1,16 @@
 # **Web Scraping y Almacenamiento de Datos en CouchDB**
 
-Breve descripción o resumen del proyecto.
+## Breve descripción 
+
+Este repositorio contiene un script de Python que utiliza web scraping para extraer datos de páginas de compras en línea de tecnología. Los datos extraídos se almacenan en una base de datos de CouchDB.
+
+## Integrantes
+- Joseph Yépez
+- Jared Valenzuela
+- Alejandro Moreira
+- Ismael Novillo
+- Martin Jimenez
+
 
 ## **Tabla de contenidos**
 
@@ -8,8 +18,7 @@ Breve descripción o resumen del proyecto.
 - __Url utilizadas__
 - __Explicacion del Código__
 - __Réplicas y CouchDB__
-- __Contribución__
-- __Licencia__
+- __Conclusion__
 
 ## **Requisitos previos**
 
@@ -40,7 +49,7 @@ __Parte 3:__ Iteración sobre las URLs y web scraping
 En esta sección, recorremos cada URL en la lista urls mediante un bucle for. Para cada URL, realizamos una solicitud HTTP utilizando requests.get() para obtener el contenido de la página. Luego, utilizamos BeautifulSoup para analizar el HTML de la página y poder extraer información de ella.
 
 __Parte 4:__ Definición de etiquetas y extracción de datos
-Aquí definimos una lista de etiquetas HTML que queremos extraer de la página. Puedes agregar más etiquetas a esta lista según tus necesidades. Luego, creamos una lista vacía llamada data donde almacenaremos los datos extraídos de las etiquetas.
+Aquí definimos una lista de etiquetas HTML que queremos extraer de la página. Se puede agregar más etiquetas a esta lista según las necesidades y especificaciones que se requiera. Luego, creamos una lista vacía llamada data donde almacenaremos los datos extraídos de las etiquetas.
 
 Utilizamos un bucle for anidado para iterar sobre cada etiqueta en la lista. Dentro de ese bucle, utilizamos soup.find_all() para encontrar todos los elementos que coinciden con la etiqueta actual en el HTML de la página. Luego, recorremos los elementos encontrados y extraemos el contenido de texto de cada uno. Finalmente, agregamos un diccionario con la etiqueta y el contenido extraído a la lista data.
 
@@ -53,8 +62,37 @@ En esta sección, iteramos sobre cada elemento en la lista data. Utilizando la c
 
 Se utilizó web scraping para extraer datos de páginas de compras en línea de tecnología. Las etiquetas más comunes en esas páginas fueron seleccionadas para la extracción de datos. Cada integrante del equipo creó una base de datos en CouchDB con el nombre de la tienda de tecnología correspondiente y cargó los documentos obtenidos a través del web scraping en sus respectivas bases de datos.
 
-<img src="img/ebay.jpg" width="500px" alt="Texto alternativo">
+Posteriormente, se aplicó la técnica de réplicas de bases de datos en CouchDB para consolidar los datos extraídos de las bases de datos individuales de los integrantes en una base de datos principal llamada "TIENDA". Se configuraron las réplicas desde cada base de datos de los integrantes hacia la base de datos principal, de manera que la base de datos "TIENDA" recibió 2.000 documentos de cada integrante, cumpliendo con el requisito de alcanzar un total de 10.000 documentos.
 
-Posteriormente, se aplicó la técnica de réplicas de bases de datos en CouchDB para consolidar los datos extraídos de las bases de datos individuales de los integrantes en una base de datos principal llamada "PRODUCTOS". Se configuraron las réplicas desde cada base de datos de los integrantes hacia la base de datos principal, de manera que la base de datos "PRODUCTOS" recibió 2.000 documentos de cada integrante, cumpliendo con el requisito de alcanzar un total de 10.000 documentos.
+<img src="img/ebay.jpg" width="500px" alt="Texto alternativo">
+<img src="img/ebay_replica.jpg" width="500px" alt="Texto alternativo">
+<img src="img/amazon%20base.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20amazon.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica2.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20aliexpress.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20aliexpress2.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20aliexpress3.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20vepee1.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20vepee2.jpg" width="500px" alt="Texto alternativo">
+<img src="img/veepee%20replica.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20walmart.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20walmart1.jpg" width="500px" alt="Texto alternativo">
+<img src="img/replica%20walmart2.jpg" width="500px" alt="Texto alternativo">
+
+__Base final con 10k de documentos__
+<img src="img/REPLICA%20TIENDAS%20FINAL.jpg" width="500px" alt="Texto alternativo">
 
 Esto permite tener una base de datos centralizada y actualizada con los datos obtenidos de todas las tiendas de tecnología. Además, se utilizó el programa Hamachi para establecer conexiones remotas entre los integrantes del equipo y facilitar la configuración de las réplicas en CouchDB.
+
+                                    __HAMACHI__
+
+<img src="img/hamachi.jpg" width="500px" alt="Texto alternativo">
+
+
+## Conclusión
+
+En conclusión, este trabajo demostró la capacidad de realizar web scraping en páginas de compra de tecnología y utilizar CouchDB como base de datos para almacenar y consolidar los datos extraídos. El uso de réplicas en CouchDB facilitó la sincronización y la disponibilidad de los datos entre las bases de datos individuales de los integrantes del equipo y la base de datos principal.
+
+Además, se utilizó el programa Hamachi para establecer una conexión segura entre las máquinas y configurar las réplicas, lo que permitió una colaboración eficiente y centralizada en la recopilación y almacenamiento de datos.
+
+Este proyecto demostró la utilidad del web scraping para obtener información relevante de páginas web, así como la capacidad de CouchDB para almacenar y gestionar grandes bloques de datos.
